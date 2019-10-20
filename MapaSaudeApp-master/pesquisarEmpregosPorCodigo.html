@@ -1,0 +1,33 @@
+<main>
+    <form>
+      <!-- Tabela de Pesquisa Empregos -->
+      <div class="box">
+          <table class="table table-hover">
+              <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Código do Posto</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Município</th>
+                    <th scope="col">Bairro</th>
+                    <th scope="col">Cep</th>
+                    <th scope="col">UF</th>
+                    <th scope="col">Telefone</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td scope="row">{{emprego.codEmprego}}</td>
+                      <td scope="row">{{emprego.nome}}</td>
+                      <td scope="row">{{emprego.endereco}}</td>
+                      <td scope="row">{{emprego.municipio}}</td>
+                      <td scope="row">{{emprego.bairro}}</td>
+                      <td scope="row">{{emprego.cep}}</td>
+                      <td scope="row">{{emprego.uf}}</td>
+                      <td scope="row">{{emprego.telefone}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+    </form>
+</main>

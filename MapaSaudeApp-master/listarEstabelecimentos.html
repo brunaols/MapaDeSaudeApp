@@ -1,0 +1,64 @@
+<main>
+    <form>
+        <!-- Campo do formulário -->
+        <div class="box">
+            <div class="form-group">
+                <label for="quantidade">
+                      Quantidade de Estabelecimentos:
+                </label>
+                <select class="form-control" nome="quantidade" ng-model="quantidade" ng-options="quantidade for quantidade in quantidades">
+                    <option value="">Selecione uma quantidade de Estabelecimentos</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="listarEstabelecimentos(quantidade)">
+                Listar
+            </button>
+            </div>
+
+            <!-- Tabela de Estabelecimentos -->
+        <div class="box">
+            <table class="table table-hover">
+                  <thead class="thead-light">
+                      <tr>
+                          <th scope="col">Código</th>
+                          <th scope="col">Nome</th>
+                          <th scope="col">Natureza</th>
+                          <th scope="col">Tipo de Unidade</th>
+                          <th scope="col">Vinculo com SUS</th>
+                          <th scope="col">Retenção</th>
+                          <th scope="col">Fluxo de Clientela</th>
+                          <th scope="col">Endereco</th>
+                          <th scope="col">Município</th>
+                          <th scope="col">UF</th>
+                          <th scope="col">cep</th>
+                          <th scope="col">Detalhar</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="estabelecimento in estabelecimentos">
+                        <td scope="row">{{estabelecimento.codUnidade}}</td>
+                        <td scope="row">{{estabelecimento.nomeFantasia}}</td>
+                        <td scope="row">{{estabelecimento.natureza}}</td>
+                        <td scope="row">{{estabelecimento.tipoUnidade}}</td>
+                        <td scope="row">{{estabelecimento.vinculoSus}}</td>
+                        <td scope="row">{{estabelecimento.retencao}}</td>
+                        <td scope="row">{{estabelecimento.fluxoClientela}}</td>
+                        <td scope="row">{{estabelecimento.logradouro}}, {{estabelecimento.numero}}, {{estabelecimento.bairro}}</td>
+                        <td scope="row">{{estabelecimento.cidade}}</td>
+                        <td scope="row">{{estabelecimento.uf}}</td>
+                        <td scope="row">{{estabelecimento.cep}}</td>
+                        <td md-cell>
+                            <!-- Redirecionar para a página de Estabelecimentos: estabelecimentos-->
+                            <md-button aria-label="Detalhar" ui-sref="listarEstabelecimentos({idEstabelecimentos: estabelecimentos.idEstabelecimentos})" ui-sref-opts="{reload: true}">
+                                <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
+                                <md-tooltip md-direction="bottom"> 
+                                      Detalhar Estabelecimentos
+                                </md-tooltip>
+                            </md-button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</main>

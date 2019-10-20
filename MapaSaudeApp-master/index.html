@@ -1,0 +1,208 @@
+<html ng-app="AngularApp">
+
+<head>
+    <title>Minha página AngularJS</title>
+    <meta charset="utf-8" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/saude.css">
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- AngularJS -->
+    <script src="node_modules/angular/angular.min.js" type="text/javascript"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.min.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.min.js"></script>
+
+    <!-- ui.router -->
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js" type="text/javascript"></script>
+
+    <!-- Angular Material -->
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
+    <script src="node_modules/angular-material/angular-material.min.js" type="text/javascript"></script>
+
+    <!-- Angular Material Icons -->
+    <script src="node_modules/angular-material-icons/angular-material-icons.min.js"></script>
+
+    <!-- Aplicação -->
+    <script src="js/app.js" type="text/javascript"></script>
+    <!-- Factorys -->
+    <script src="js/factory/assistenciaSocialApi.js" type="text/javascript"></script>
+    <script src="js/factory/empregosApi.js" type="text/javascript"></script>
+    <script src="js/factory/especialidadesDeUmEstabelecimentoApi.js" type="text/javascript"></script>
+    <script src="js/factory/estabelecimentosDeSaudeApi.js" type="text/javascript"></script>
+    <script src="js/factory/profissionaisApi.js" type="text/javascript"></script>
+    <script src="js/factory/remediosApi.js" type="text/javascript"></script>
+    <script src="js/factory/servicosEspecializadosApi.js" type="text/javascript"></script>
+    <!-- Controllers -->
+    <script src="js/controller/listarAssistenciasSociaisCrasCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/listarAssistenciasSociaisCreasCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/listarEmpregosCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/listarEstabelecimentosCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/listarRemediosCtrl.js" type="text/javascript"> </script>
+    <script src="js/controller/pesquisarAssistenciaSocialCrasPorCoordenadasCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/pesquisarAssistenciaSocialCrasPorIdCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/pesquisarAssistenciaSocialCreasPorCoordenadasCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/pesquisarAssistenciaSocialCreasPorIdCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/pesquisarEmpregoPorCoordenadasCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/pesquisarEmpregosPorCodigoCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/pesquisarEspecialidadesPorCodigoDaUnidadeCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/pesquisarEstabelecimentosPorCodigoDaUnidadeCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/pesquisarEstabelecimentosPorCoordenadasCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/pesquisarProfissionaisPorCodigoDaUnidadeCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/pesquisarServicosPorCodigoDaUnidadeCtrl.js" type="text/javascript"></script>
+
+    <!-- Rotas -->
+    <script src="js/router.js" type="text/javascript"></script>
+
+    <!-- Jquery -->
+    <script src="https://unpkg.com/jquery@^3.3.1/dist/jquery.min.js"></script>
+
+    <!-- Menu -->
+    <script src="js/tooltip.js"></script>
+    
+    <!-- Leaflet - Mapas-->
+    <script src="node_modules/leaflet/dist/leaflet.js"></script>
+    <script src="node_modules/ui-leaflet/dist/ui-leaflet.min.js"></script>
+    <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <div class="pos-f-t">
+              <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="bg-dark p-4">
+
+                        <h5 class="text-white h4">Funcionalidades Disponíveis</h5>
+
+                        <ul class="menu">
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="home" data-toggle="tooltip" data-placement="top" title="Voltar ao Início">
+                                    <ng-md-icon icon="home" size="35"></ng-md-icon>
+                                    Início
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="listarAssistenciasSociaisCras" data-toggle="tooltip" data-placement="top" title="Listar as Assistencias Cras">
+                                    <ng-md-icon icon="view_list" size="35"></ng-md-icon>
+                                    Listar Assistências Sociais Cras
+                                </a>
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="listarAssistenciasSociaisCreas" data-toggle="tooltip" data-placement="top" title="Listar as Assistencias Creas">
+                                    <ng-md-icon icon="view_list" size="35"></ng-md-icon>
+                                    Listar Assistências Sociais Creas
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="listarEmpregos" data-toggle="tooltip" data-placement="top" title="Listar Empregos">
+                                    <ng-md-icon icon="view_list" size="35"></ng-md-icon>
+                                    Listar Empregos
+                                </a>
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="listarEstabelecimentos" data-toggle="tooltip" data-placement="top" title="Listar Estabelecimentos">
+                                    <ng-md-icon icon="view_list" size="35"></ng-md-icon>
+                                    Listar Estabelecimentos
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="listarRemedios" data-toggle="tooltip" data-placement="top" title="Listar Remedios">
+                                    <ng-md-icon icon="view_list" size="35"></ng-md-icon>
+                                    Listar Remédios
+                                </a>
+
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="pesquisarAssistenciaSocialCrasPorCoordenadasCtrl">
+                                   <i class="fas fa-globe bg-dark" style="font-size:24px;"></i> Pesquisar Assistência Social Cras Por Coordenadas
+                                </a>
+
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="pesquisarAssistenciaSocialCreasPorCoordenadasCtrl">
+                                   <i class="fas fa-globe bg-dark" style="font-size:24px;"></i> Pesquisar Assistência Social Creas Por Coordenadas
+                                </a>
+
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="pesquisarAssistenciaSocialCrasPorIdCtrl">
+                                   <i class="fas fa-globe bg-dark" style="font-size:24px;"></i> Pesquisar Assistência Social Cras Por Id
+                                </a>
+
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="pesquisarAssistenciaSocialCreasPorIdCtrl">
+                                   <i class="fas fa-globe bg-dark" style="font-size:24px;"></i> Pesquisar Assistência Social Creas Por Id
+                                </a>
+
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="pesquisarEmpregoPorCoordenadasCtrl">
+                                   <i class="fas fa-globe bg-dark" style="font-size:24px;"></i> Pesquisar Empregos Por Coordenadas
+                                </a>
+
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="pesquisarEmpregosPorCodigoCtrl">
+                                   <i class="fas fa-globe bg-dark" style="font-size:24px;"></i> Pesquisar Empregos Por Código
+                                </a>
+
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="pesquisarEspecialidadesPorCodigoDaUnidadeCtrl">
+                                   <i class="fas fa-globe bg-dark" style="font-size:24px;"></i> Pesquisar Especialidades Por Código Da Unidade
+                                </a>
+
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="pesquisarEstabelecimentosPorCodigoDaUnidadeCtrl">
+                                   <i class="fas fa-globe bg-dark" style="font-size:24px;"></i> Pesquisar Estabelecimentos Por Código Da Unidade
+                                </a>
+
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="pesquisarEstabelecimentosPorCoordenadasCtrl">
+                                   <i class="fas fa-globe bg-dark" style="font-size:24px;"></i> Pesquisar Estabelecimentos Por Coordenadas
+                                </a>
+
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="pesquisarProfissionaisPorCodigoDaUnidadeCtrl">
+                                   <i class="fas fa-globe bg-dark" style="font-size:24px;"></i> Pesquisar Profissionais Por Código
+                                </a>
+                            <li class="nav-item">
+                                <a class="nav-link" ui-sref="pesquisarServicosPorCodigoDaUnidadeCtrl">
+                                   <i class="fas fa-globe bg-dark" style="font-size:24px;"></i> Pesquisar Servicos Por Código Da Unidade
+                                </a>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <nav class="navbar sticky-top navbar-dark bg-dark">
+                    <a class="navbar-brand h1 mb-0" href="#">Menu</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+            </div>
+
+
+        </header>
+
+        <main>
+            <div ui-view></div>
+        </main>
+
+        <footer>
+            Dados - TCU
+        </footer>
+    </div>
+</body>
+
+</html>

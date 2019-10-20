@@ -1,0 +1,20 @@
+{
+  "name": "MapaSaudeApp",
+  "version": "1.0",
+  "description": "Aplicação para explorar dados abertos sobre Estabelecimentos de Saúde e Assitência Social.",
+  "main": "index.html",
+  "repository": "https://github.com/brunaols/MapaDeSaudeApp.git",
+  "author": "brunaoliveira533@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.7.8",
+    "angular-animate": "^1.7.8",
+    "angular-aria": "^1.7.8",
+    "angular-material": "^1.1.20",
+    "angular-material-icons": "^0.7.1",
+    "angular-messages": "^1.7.8",
+    "angular-ui-router": "^1.0.23",
+    "leaflet": "^1.5.1",
+    "ui-leaflet": "^1.0.3"
+  }
+}

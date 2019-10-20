@@ -1,0 +1,60 @@
+<main>
+    <form>
+        <!-- Campo do formulário -->
+        <div class="box">
+            <div class="form-group">
+                <label for="quantidade">
+                      Quantidade de Remédios:
+                </label>
+                <select class="form-control" nome="quantidade" ng-model="quantidade" ng-options="quantidade for quantidade in quantidades">
+                    <option value="">Selecione uma quantidade de Remédios</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="listarRemedios(quantidade)">
+                Listar
+            </button>
+            </div>
+
+            <!-- Tabela de Remédios -->
+        <div class="box">
+            <table class="table table-hover">
+                  <thead class="thead-light">
+                      <tr>
+                          <th scope="col">Código</th>
+                          <th scope="col">Princípio Ativo</th>
+                          <th scope="col">Laboratório</th>
+                          <th scope="col">Nome Produto</th>
+                          <th scope="col">Apresentação</th>
+                          <th scope="col">Classe Terapêutica</th>
+                          <th scope="col">Preço Liberado</th>
+                          <th scope="col">Restrição</th>
+                          <th scope="col">Última Alteração</th>
+                          <th scope="col">Detalhar</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="remedio in remedios">
+                        <td scope="row">{{remedio.codBarraEan}}</td>
+                        <td scope="row">{{remedio.principioAtivo}}</td>
+                        <td scope="row">{{remedio.laboratorio}}</td>
+                        <td scope="row">{{remedio.produto}}</td>
+                        <td scope="row">{{remedio.apresentacao}}</td>
+                        <td scope="row">{{remedio.classeTerapeutica}}</td>
+                        <td scope="row">{{remedio.precoLiberado}}</td>
+                        <td scope="row">{{remedio.restricao}}</td>
+                        <td scope="row">{{remedio.ultimaAlteracao}}</td>
+                        <td md-cell>
+                            <!-- Redirecionar para a página de Remédios: remedios-->
+                            <md-button aria-label="Detalhar" ui-sref="listarRemedios({idRemedios: remedios.idRemedios})" ui-sref-opts="{reload: true}">
+                                <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
+                                <md-tooltip md-direction="bottom">
+                                      Detalhar Remédios
+                                </md-tooltip>
+                            </md-button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</main>

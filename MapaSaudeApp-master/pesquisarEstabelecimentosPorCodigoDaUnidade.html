@@ -1,0 +1,41 @@
+<main>
+    <form>
+      <!-- Tabela de Pesquisa Estabelecimentos -->
+      <div class="box">
+          <table class="table table-hover">
+              <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Código da Unidade</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Natureza</th>
+                    <th scope="col">Tipo de Unidade</th>
+                    <th scope="col">Vinculo com SUS</th>
+                    <th scope="col">Retenção</th>
+                    <th scope="col">Fluxo de Clientela</th>
+                    <th scope="col">Tipo de logradouro</th>
+                    <th scope="col">Endereco</th>
+                    <th scope="col">Município</th>
+                    <th scope="col">UF</th>
+                    <th scope="col">cep</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td scope="row">{{estabelecimentosPorCodigoDaUnidade.codUnidadeEstabelecimentos}}</td>
+                      <td scope="row">{{estabelecimentosPorCodigoDaUnidade.nome}}</td>
+                      <td scope="row">{{estabelecimentosPorCodigoDaUnidade.natureza}}</td>
+                      <td scope="row">{{estabelecimentosPorCodigoDaUnidade.tipoUnidade}}</td>
+                      <td scope="row">{{estabelecimentosPorCodigoDaUnidade.vinculoSus}}</td>
+                      <td scope="row">{{estabelecimentosPorCodigoDaUnidade.retencao}}</td>
+                      <td scope="row">{{estabelecimentosPorCodigoDaUnidade.fluxoClientela}}</td>
+                      <td scope="row">{{estabelecimentosPorCodigoDaUnidade.tipoLogradouro}}</td>
+                      <td scope="row">{{estabelecimentosPorCodigoDaUnidade.endereco}}</td>
+                      <td scope="row">{{estabelecimentosPorCodigoDaUnidade.municipio}}</td>
+                      <td scope="row">{{estabelecimentosPorCodigoDaUnidade.uf}}</td>
+                      <td scope="row">{{estabelecimentosPorCodigoDaUnidade.cep}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+    </form>
+</main>
