@@ -1,4 +1,5 @@
-var pesquisarAssistenciaSocialCrasPorIdCtrl = function ($scope, $stateParams, assistenciaSocialApi) {
+var pesquisarAssistenciaSocialCrasPorIdCtrl = function ($scope, $stateParams, $mdToast,
+  assistenciaSocialApi) {
 
     $scope.assistenciaSocialCras = {};
     $scope.idCras = $stateParams.idCras;
@@ -6,9 +7,9 @@ var pesquisarAssistenciaSocialCrasPorIdCtrl = function ($scope, $stateParams, as
     let pesquisarAssistenciaSocialCrasPorId = function (idCras) {
         assistenciaSocialApi.getPesquisarAssistenciaSocialCrasPorId(idCras)
             .then(function (response) {
-            // Toast
+                // Toast
                 var toast = $mdToast.simple()
-                    .textContent('As assistencias sociais cras foram listadas abaixo.')
+                    .textContent('As assistências sociais cras foram listadas abaixo.')
                     .position('bottom center')
                     .action('OK')
                     .hideDelay(6000)
@@ -18,7 +19,7 @@ var pesquisarAssistenciaSocialCrasPorIdCtrl = function ($scope, $stateParams, as
             })
             .catch(function (error) {
                 var toast = $mdToast.simple()
-                    .textContent('Algum problema ocorreu na solicitação dos dados da Assistencias Sociais Cras.')
+                    .textContent('Algum problema ocorreu na solicitação dos dados da Assistências Sociais Cras.')
                     .position('bottom center')
                     .action('OK')
                     .hideDelay(6000)
