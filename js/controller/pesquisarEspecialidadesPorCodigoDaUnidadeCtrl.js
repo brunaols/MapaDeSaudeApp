@@ -1,40 +1,40 @@
-var pesquisarProfissionaisPorCodigoDaUnidadeCtrl = function ($scope, $stateParams, profissionaisApi) {
+var pesquisarEspecialidadesPorCodigoDaUnidadeCtrl = function ($scope, $stateParams, especialidadesDeUmEstabelecimentoApi) {
 
-    $scope.atividadeProfissional = {};
+    $scope.especialidadesDaUnidade = {};
     $scope.codUnidade = $stateParams.codUnidade;
 
-    $scope.pesquisarProfissionaisPorCodigoDaUnidade = function (codUnidade) {
-        profissionaisApi.getPesquisarProfissionaisPorCodigoDaUnidade(codUnidade)
+    $scope.pesquisarEspecialidadesPorCodigoDaUnidade = function (codUnidade) {
+        especialidadesDeUmEstabelecimentoApi.getPesquisarEspecialidadesPorCodigoDaUnidade(codUnidade)
             .then(function (response) {
             // Toast
                 var toast = $mdToast.simple()
-                    .textContent('As assistencias sociais foram listadas abaixo.')
+                    .textContent('As especialidades foram pesquisadas abaixo.')
                     .position('bottom center')
                     .action('OK')
                     .hideDelay(6000)
                     .toastClass('my-success');
                 $mdToast.show(toast);
-                $scope.atividadeProfissional = response.data;
+                $scope.emprego = response.data;
             })
             .catch(function (error) {
              var toast = $mdToast.simple()
-                    .textContent('Algum problema ocorreu na solicitação dos dados das Assistencias Sociais.')
+                    .textContent('Algum problema ocorreu na solicitação dos dados das Especialidades.')
                     .position('bottom center')
                     .action('OK')
                     .hideDelay(6000)
                     .toastClass('my-error');
                 $mdToast.show(toast);
-            
+
                 console.error(error);
             });
     }
 
-    let inicializarProfisionaisPorCodigoDaUnidade = function() {
+    let inicializarEspecialidadesPorCodigoDaUnidade = function() {
         var codUnidade = $stateParams.codUnidade;
         console.log(codUnidade);
     }
 
-    inicializarProfissionaisPorCodigoDaUnidade();
+    inicializarEspecialidadesPorCodigoDaUnidade();
 };
 
-mapaDeSaudeApp.controller("pesquisarProfissionaisPorCodigoDaUnidadeCtrl", pesquisarProfissionaisPorCodigoDaUnidadeCtrl);
+mapaDeSaudeApp.controller("pesquisarEspecialidadesPorCodigoDaUnidadeCtrl", pesquisarEspecialidadesPorCodigoDaUnidadeCtrl);

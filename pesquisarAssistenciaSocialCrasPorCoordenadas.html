@@ -10,8 +10,7 @@
                         <th scope="col">Endereco</th>
                         <th scope="col">Município</th>
                         <th scope="col">UF</th>
-                        <th scope="col">cep</th>
-                        <th scope="col">Detalhar</th>
+                        <th scope="col">Cep</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,35 +23,28 @@
                         <td scope="row">{{assistenciaSocialCras.uf}}</td>
                         <td scope="row">{{assistenciaSocialCras.cep}}</td>
                         <td md-cell>
-                            <!-- Redirecionar para a página de escola por código: escolaPorCodigo -->
-                            <md-button aria-label="Detalhar" ui-sref="pesquisarAssistenciaSocialCrasPorId({idCras: assistenciaSocialCras.idCras})" ui-sref-opts="{reload: true}">
-                                <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
-                                <md-tooltip md-direction="bottom">
-                                    Detalhar Assistência Social
-                                </md-tooltip>
-                            </md-button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        
+
         <div id="mapid">
             <script>
                 var mymap = L.map('mapid').setView([{{assistenciaSocialCras.latitude}}, {{assistenciaSocialCras.longitude}}], 13);
-                
+
                 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 	               attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 	               maxZoom: 18,
 	               id: 'mapbox.streets',
 	               accessToken: 'your.mapbox.access.token'
                 }).addTo(mymap);
-                
-                
+
+
                 var marker = L.marker([{{assistenciaSocialCras.latitude}}, {{assistenciaSocialCras.longitude}}]).addTo(mymap);
                 marker.bindPopup({{assistenciaSocialCras.nomeCras}}).openPopup();
-            </script>   
+            </script>
         </div>
-        
+
     </form>
 </main>

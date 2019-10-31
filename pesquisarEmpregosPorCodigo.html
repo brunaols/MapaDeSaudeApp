@@ -1,5 +1,19 @@
 <main>
-    <form>
+      <form ng-controller="pesquisarEmpregosPorCodigoCtrl">
+     <div class="box">
+         <div class="form-group">
+             <label for="nome">
+                 Código:
+             </label>
+             <input class="form-control" type="text" name="codPosto"
+               ng-model="codPosto" />
+         </div>
+
+         <button type="button" class="btn btn-primary btn-lg btn-block"
+           ng-click="pesquisarEmpregosPorCodigo(codPosto)">
+             Pesquisar
+         </button>
+     </div>
       <!-- Tabela de Pesquisa Empregos -->
       <div class="box">
           <table class="table table-hover">
@@ -17,7 +31,7 @@
               </thead>
               <tbody>
                   <tr>
-                      <td scope="row">{{emprego.codEmprego}}</td>
+                      <td scope="row">{{emprego.codPosto}}</td>
                       <td scope="row">{{emprego.nome}}</td>
                       <td scope="row">{{emprego.endereco}}</td>
                       <td scope="row">{{emprego.municipio}}</td>

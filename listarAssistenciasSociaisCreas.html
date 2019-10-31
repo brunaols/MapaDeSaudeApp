@@ -26,6 +26,7 @@
                         <th scope="col">Município</th>
                         <th scope="col">bairro</th>
                         <th scope="col">UF</th>
+                        <th scope="col">Cep</th>
                         <th scope="col">Detalhar</th>
                     </tr>
                 </thead>
@@ -37,12 +38,13 @@
                         <td scope="row">{{assistenciaSocialCreas.municipio}}</td>
                         <td scope="row">{{assistenciaSocialCreas.bairro}}</td>
                         <td scope="row">{{assistenciaSocialCreas.uf}}</td>
+                        <td scope="row">{{assistenciaSocialCreas.cep}}</td>
                         <td md-cell>
                             <!-- Redirecionar para a página de escola por código: escolaPorCodigo -->
                             <md-button aria-label="Detalhar" ui-sref="pesquisarAssistenciaSocialCreasPorId({idCreas: assistenciaSocialCreas.idCreas})" ui-sref-opts="{reload: true}">
                                 <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
                                 <md-tooltip md-direction="bottom">
-                                    Detalhar Assistência Social     
+                                    Detalhar Assistência Social
                                 </md-tooltip>
                             </md-button>
                         </td>

@@ -8,7 +8,7 @@ var pesquisarAssistenciaSocialCrasPorIdCtrl = function ($scope, $stateParams, as
             .then(function (response) {
             // Toast
                 var toast = $mdToast.simple()
-                    .textContent('A assistencia social foi listada abaixo.')
+                    .textContent('As assistencias sociais cras foram listadas abaixo.')
                     .position('bottom center')
                     .action('OK')
                     .hideDelay(6000)
@@ -18,13 +18,13 @@ var pesquisarAssistenciaSocialCrasPorIdCtrl = function ($scope, $stateParams, as
             })
             .catch(function (error) {
                 var toast = $mdToast.simple()
-                    .textContent('Algum problema ocorreu na solicitação dos dados da Assistencia Social.')
+                    .textContent('Algum problema ocorreu na solicitação dos dados da Assistencias Sociais Cras.')
                     .position('bottom center')
                     .action('OK')
                     .hideDelay(6000)
                     .toastClass('my-error');
                 $mdToast.show(toast);
-            
+
                 console.error(error);
             });
     }

@@ -8,7 +8,7 @@ var pesquisarServicosPorCodigoDaUnidadeCtrl = function ($scope, $stateParams, se
             .then(function (response) {
             // Toast
                 var toast = $mdToast.simple()
-                    .textContent('As assistencias sociais foram listadas abaixo.')
+                    .textContent('Os servicos foram pesquisados abaixo.')
                     .position('bottom center')
                     .action('OK')
                     .hideDelay(6000)
@@ -18,13 +18,13 @@ var pesquisarServicosPorCodigoDaUnidadeCtrl = function ($scope, $stateParams, se
             })
             .catch(function (error) {
              var toast = $mdToast.simple()
-                    .textContent('Algum problema ocorreu na solicitação dos dados das Assistencias Sociais.')
+                    .textContent('Algum problema ocorreu na solicitação dos dados dos Servicos.')
                     .position('bottom center')
                     .action('OK')
                     .hideDelay(6000)
                     .toastClass('my-error');
                 $mdToast.show(toast);
-            
+
                 console.error(error);
             });
     }

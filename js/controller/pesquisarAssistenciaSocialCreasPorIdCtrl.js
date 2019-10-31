@@ -2,13 +2,13 @@ var pesquisarAssistenciaSocialCreasPorIdCtrl = function ($scope, $stateParams, a
 
     $scope.assistenciaSocialCreas = {};
     $scope.idCreas = $stateParams.idCreas;
-    
+
     $scope.pesquisarAssistenciaSocialCreasPorId = function (idCreas) {
         assistenciaSocialApi.getPesquisarAssistenciaSocialCreasPorId(idCreas)
             .then(function (response) {
             // Toast
                 var toast = $mdToast.simple()
-                    .textContent('As assistencias sociais foram listadas abaixo.')
+                    .textContent('As assistencias sociais por id foram listadas abaixo.')
                     .position('bottom center')
                     .action('OK')
                     .hideDelay(6000)
@@ -18,13 +18,13 @@ var pesquisarAssistenciaSocialCreasPorIdCtrl = function ($scope, $stateParams, a
             })
             .catch(function (error) {
                 var toast = $mdToast.simple()
-                    .textContent('Algum problema ocorreu na solicitação dos dados das Assistencias Sociais.')
+                    .textContent('Algum problema ocorreu na solicitação dos dados das Assistencias Sociais Por ID.')
                     .position('bottom center')
                     .action('OK')
                     .hideDelay(6000)
                     .toastClass('my-error');
                 $mdToast.show(toast);
-            
+
                 console.error(error);
             });
     }

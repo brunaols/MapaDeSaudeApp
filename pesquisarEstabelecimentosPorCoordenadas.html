@@ -1,0 +1,58 @@
+<main>
+    <form>
+        <div class="box">
+            <table class="table table-hover">
+                <thead class="thead-light">
+                    <tr>
+                      <th scope="col">Código</th>
+                      <th scope="col">Nome</th>
+                      <th scope="col">Natureza</th>
+                      <th scope="col">Tipo de Unidade</th>
+                      <th scope="col">Vinculo com SUS</th>
+                      <th scope="col">Retenção</th>
+                      <th scope="col">Fluxo de Clientela</th>
+                      <th scope="col">Endereco</th>
+                      <th scope="col">Município</th>
+                      <th scope="col">UF</th>
+                      <th scope="col">cep</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td scope="row">{{estabelecimento.codUnidade}}</td>
+                      <td scope="row">{{estabelecimento.nomeFantasia}}</td>
+                      <td scope="row">{{estabelecimento.natureza}}</td>
+                      <td scope="row">{{estabelecimento.tipoUnidade}}</td>
+                      <td scope="row">{{estabelecimento.vinculoSus}}</td>
+                      <td scope="row">{{estabelecimento.retencao}}</td>
+                      <td scope="row">{{estabelecimento.fluxoClientela}}</td>
+                      <td scope="row">{{estabelecimento.logradouro}}, {{estabelecimento.numero}}, {{estabelecimento.bairro}}</td>
+                      <td scope="row">{{estabelecimento.cidade}}</td>
+                      <td scope="row">{{estabelecimento.uf}}</td>
+                      <td scope="row">{{estabelecimento.cep}}</td>
+                      <td md-cell>
+                      </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="mapid">
+            <script>
+                var mymap = L.map('mapid').setView([{{estabelecimento.latitude}}, {{estabelecimento.longitude}}], 13);
+
+                L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+	               attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	               maxZoom: 18,
+	               id: 'mapbox.streets',
+	               accessToken: 'your.mapbox.access.token'
+                }).addTo(mymap);
+
+
+                var marker = L.marker([{{estabelecimento.latitude}}, {{estabelecimento.longitude}}]).addTo(mymap);
+                marker.bindPopup({{estabelecimento.nomeCras}}).openPopup();
+            </script>
+        </div>
+
+    </form>
+</main>

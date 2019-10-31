@@ -7,7 +7,7 @@ var pesquisarAssistenciaSocialCreasPorCoordenadasCtrl = function ($scope, $mdToa
             .then(function (response) {
             // Toast
                 var toast = $mdToast.simple()
-                    .textContent('As assistencias sociais foram listadas abaixo.')
+                    .textContent('As assistencias sociais creas foram listadas abaixo.')
                     .position('bottom center')
                     .action('OK')
                     .hideDelay(6000)
@@ -17,7 +17,7 @@ var pesquisarAssistenciaSocialCreasPorCoordenadasCtrl = function ($scope, $mdToa
             })
             .catch(function (error) {
                 var toast = $mdToast.simple()
-                        .textContent('Algum problema ocorreu na solicitação dos dados das Assistencias Sociais.')
+                        .textContent('Algum problema ocorreu na solicitação dos dados das Assistencias Sociais Creas.')
                         .position('bottom center')
                         .action('OK')
                         .hideDelay(6000)

@@ -1,5 +1,19 @@
 <main>
-    <form>
+      <form ng-controller="pesquisarServicosPorCodigoDaUnidadeCtrl">
+     <div class="box">
+         <div class="form-group">
+             <label for="nome">
+                 Código:
+             </label>
+             <input class="form-control" type="text" name="codServico"
+               ng-model="codServico" />
+         </div>
+
+         <button type="button" class="btn btn-primary btn-lg btn-block"
+           ng-click="pesquisarServicosPorCodigoDaUnidade(codServico)">
+             Pesquisar
+         </button>
+     </div>
       <!-- Tabela de Pesquisa Serviços -->
       <div class="box">
           <table class="table table-hover">
