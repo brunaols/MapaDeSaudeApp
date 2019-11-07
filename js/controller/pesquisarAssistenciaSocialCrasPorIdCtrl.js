@@ -15,7 +15,8 @@ var pesquisarAssistenciaSocialCrasPorIdCtrl = function ($scope, $stateParams, $m
                     .hideDelay(6000)
                     .toastClass('my-success');
                 $mdToast.show(toast);
-                $scope.assistenciaSocialCras = response.data;
+                console.log(response.data);
+                $scope.assistenciasSociaisCras = response.data;
             })
             .catch(function (error) {
                 var toast = $mdToast.simple()
