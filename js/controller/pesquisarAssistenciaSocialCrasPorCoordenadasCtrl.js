@@ -1,9 +1,11 @@
-var pesquisarAssistenciaSocialCrasPorCoordenadasCtrl = function ($scope, $mdToast, assistenciaSocialApi) {
+var pesquisarAssistenciaSocialCrasPorCoordenadasCtrl = function ($scope, $stateParams,
+  $mdToast) {
 
     $scope.assistenciaSocialCras = [];
     $scope.latitude = $stateParams.latitude;
     $scope.longitude = $stateParams.longitude;
 
+<<<<<<< HEAD
 
     $scope.pesquisarAssistenciaSocialCrasPorCoordenadas = function (latitude, longitude) {
         assistenciaSocialApi.getPesquisarAssistenciaSocialCrasPorCoordenadasCtrl(latitude, longitude)
@@ -39,6 +41,19 @@ var pesquisarAssistenciaSocialCrasPorCoordenadasCtrl = function ($scope, $mdToas
 
     inicializarAssistenciaSocialCras();
 
+=======
+    let inicializarAssistenciaSocialCras = function() {
+        var latitude = $stateParams.latitude;
+        var longitude = $stateParams.longitude;;
+
+        console.log(latitude);
+        console.log(longitude);
+
+        // Exibir mapa usando Leaflet.
+    }
+
+    inicializarAssistenciaSocialCras();
+>>>>>>> c2643a832017c592aa82447ec0470091c6e6370f
 };
 
 

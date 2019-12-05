@@ -39,7 +39,7 @@ mapaDeSaudeApp.config(function($stateProvider, $urlRouterProvider){
     };
 
     var pesquisarAssistenciaSocialCrasPorCoordenadasState = {
-        url: '/pesquisarAssistenciaSocialCrasPorCoordenadas/:latitude, :longitude, :raio',
+        url: '/pesquisarAssistenciaSocialCrasPorCoordenadas/lat/:latitude/long/:longitude',
         templateUrl: 'pesquisarAssistenciaSocialCrasPorCoordenadas.html',
         controller: 'pesquisarAssistenciaSocialCrasPorCoordenadasCtrl'
     };
@@ -98,12 +98,15 @@ mapaDeSaudeApp.config(function($stateProvider, $urlRouterProvider){
         controller: 'pesquisarProfissionaisPorCodigoDaUnidadeCtrl'
     };
 
+<<<<<<< HEAD
     var pesquisarRemediosState = {
         url: '/pesquisarRemedios',
         templateUrl: 'pesquisarRemedios.html',
         controller: 'pesquisarRemediosCtrl'
     };
 
+=======
+>>>>>>> c2643a832017c592aa82447ec0470091c6e6370f
     var pesquisarServicosPorCodigoDaUnidadeState = {
         url: '/pesquisarServicosPorCodigoDaUnidade',
         templateUrl: 'pesquisarServicosPorCodigoDaUnidade.html',
