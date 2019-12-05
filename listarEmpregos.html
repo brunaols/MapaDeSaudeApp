@@ -31,6 +31,7 @@
                         <th scope="col">Latitude</th>
                         <th scope="col">Longitude</th>
                         <th scope="col">Detalhar</th>
+                        <th scope="col">Mapa</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,17 +47,35 @@
                             <td scope="row">{{empregos.lat}}</td>
                             <td scope="row">{{empregos.long}}</td>
                             <td md-cell>
-                            <!-- Redirecionar para a página de emprego por código: EmpregosPorCodigo -->
-                            <md-button aria-label="Detalhar" ui-sref="pesquisarEmpregosPorId({idEmpregos: empregos.idEmpregos})" ui-sref-opts="{reload: true}">
-                            <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
-                            <md-tooltip md-direction="bottom">
-                                  Detalhar Empregos
-                            </md-tooltip>
-                        </md-button>
-                    </td>
-                  </tr>
-                </tbody>
+
+                              <md-button aria-label="Detalhar EMPREGOS"
+                                ui-sref="pesquisarEmpregosPorCodigo(
+                                  {codPosto: empregos.codPosto})"
+                                ui-sref-opts="{reload: true}">
+                                  <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
+                                  <md-tooltip md-direction="bottom">
+                                      Detalhar Empregos
+                                  </md-tooltip>
+                              </md-button>
+                          </td>
+                          <td md-cell>
+
+                              <md-button aria-label="Exibir no Mapa"
+                                ui-sref="pesquisarEmpregosPorCoordenadas(
+                                  {
+                                    latitude: empregos.lat,
+                                    longitude:empregos.long
+                                  })"
+                                ui-sref-opts="{reload: true}">
+                                  <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
+                                  <md-tooltip md-direction="bottom">
+                                      Exibir no Mapa
+                                  </md-tooltip>
+                              </md-button>
+                          </td>
+                      </tr>
+                  </tbody>
               </table>
-           </div>
+          </div>
       </form>
-</main>
+  </main>

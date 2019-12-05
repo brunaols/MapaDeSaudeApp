@@ -1,4 +1,4 @@
-<main>
+main>
     <form>
         <!-- Campo do formulário -->
         <div class="box">
@@ -42,7 +42,10 @@
                         <td scope="row">{{assistenciaSocialCras.cep}}</td>
                         <td md-cell>
                             <!-- Redirecionar para a página de escola por código: escolaPorCodigo -->
-                            <md-button aria-label="Detalhar" ui-sref="pesquisarAssistenciaSocialCrasPorId({idCras: assistenciaSocialCras.idCras})" ui-sref-opts="{reload: true}">
+                            <md-button aria-label="Detalhar CRAS"
+                              ui-sref="pesquisarAssistenciaSocialCrasPorId(
+                                {idCras: assistenciaSocialCras.idCras})"
+                              ui-sref-opts="{reload: true}">
                                 <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
                                 <md-tooltip md-direction="bottom">
                                     Detalhar Assistência Social
@@ -50,12 +53,17 @@
                             </md-button>
                         </td>
                         <td md-cell>
-                            <md-button arial-label="Mapa" ui-ref="pesquisarAssistenciaSocialCrasPorCoordenadas(
-                            {latitude: assistenciaSocialCras.latitude}, {longitude: assistenciaSocialCras.longitude},
-                            {raio: assistenciaSocialCras.raio})" ui-sref-opts="{reload: true}">
+                            <!-- Redirecionar para a página de escola por código: escolaPorCodigo -->
+                            <md-button aria-label="Exibir no Mapa"
+                              ui-sref="pesquisarAssistenciaSocialCrasPorCoordenadas(
+                                {
+                                  latitude: assistenciaSocialCras.lat,
+                                  longitude:assistenciaSocialCras.long
+                                })"
+                              ui-sref-opts="{reload: true}">
                                 <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
                                 <md-tooltip md-direction="bottom">
-                                    Mostrar Mapa
+                                    Exibir no Mapa
                                 </md-tooltip>
                             </md-button>
                         </td>

@@ -3,11 +3,10 @@ var pesquisarAssistenciaSocialCrasPorCoordenadasCtrl = function ($scope, $mdToas
     $scope.assistenciaSocialCras = [];
     $scope.latitude = $stateParams.latitude;
     $scope.longitude = $stateParams.longitude;
-    $scope.raio = $stateParams.raio;
 
 
-    $scope.pesquisarAssistenciaSocialCrasPorCoordenadas = function (latitude, longitude, raio) {
-        assistenciaSocialApi.getPesquisarAssistenciaSocialCrasPorCoordenadasCtrl(latitude, longitude, raio)
+    $scope.pesquisarAssistenciaSocialCrasPorCoordenadas = function (latitude, longitude) {
+        assistenciaSocialApi.getPesquisarAssistenciaSocialCrasPorCoordenadasCtrl(latitude, longitude)
             .then(function (response) {
             // Toast
                 var toast = $mdToast.simple()
@@ -31,16 +30,15 @@ var pesquisarAssistenciaSocialCrasPorCoordenadasCtrl = function ($scope, $mdToas
                     console.error(error);
             });
     }
-    
+
     let inicializarAssistenciaSocialCras = function() {
         var latitude = $stateParams.latitude;
         var longitude = $stateParams.longitude;
-        var raio = $stateParams.raio;
         pesquisarAssistenciaSocialCrasPorCoordenadas(idCras);
     }
 
     inicializarAssistenciaSocialCras();
-    
+
 };
 
 

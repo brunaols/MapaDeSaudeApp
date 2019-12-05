@@ -2,8 +2,8 @@ var pesquisarEmpregosPorCoordenadasCtrl = function ($scope, $mdToast, empregosAp
 
     $scope.empregosPorCoordenadas = [];
 
-    $scope.pesquisarEmpregosPorCoordenadas = function (latitude, longitude, raio) {
-        empregosApi.getPesquisarEmpregosPorCoordenadas(latitude, longitude, raio)
+    $scope.pesquisarEmpregosPorCoordenadas = function (latitude, longitude) {
+        empregosApi.getPesquisarEmpregosPorCoordenadas(latitude, longitude)
             .then(function (response) {
             // Toast
                 var toast = $mdToast.simple()

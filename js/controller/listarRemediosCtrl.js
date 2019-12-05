@@ -1,7 +1,7 @@
 var listarRemediosCtrl = function($scope, $mdToast, remediosApi) {
     $scope.remedios = [];
     $scope.quantidades = [10, 20, 30, 40, 50, 100];
-    
+
     $scope.listarRemedios = function(quantidade) {
         remediosApi.getListarRemedios(quantidade)
             .then(function(response) {
@@ -24,7 +24,7 @@ var listarRemediosCtrl = function($scope, $mdToast, remediosApi) {
                     .hideDelay(6000)
                     .toastClass('my-error');
                 $mdToast.show(toast);
-            
+
                 console.error(error);
             });
     }

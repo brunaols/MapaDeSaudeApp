@@ -32,11 +32,12 @@
                           <th scope="col">UF</th>
                           <th scope="col">cep</th>
                           <th scope="col">Detalhar</th>
+                          <th scope="col">Mapa</th>
                       </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="estabelecimento in estabelecimentos">
-                        <td scope="row">{{estabelecimento.codUnidade}}</td>
+                        <td scope="row">{{estabelecimento.codCnes}}</td>
                         <td scope="row">{{estabelecimento.nomeFantasia}}</td>
                         <td scope="row">{{estabelecimento.natureza}}</td>
                         <td scope="row">{{estabelecimento.tipoUnidade}}</td>
@@ -48,17 +49,35 @@
                         <td scope="row">{{estabelecimento.uf}}</td>
                         <td scope="row">{{estabelecimento.cep}}</td>
                         <td md-cell>
-                            <!-- Redirecionar para a página de Estabelecimentos: estabelecimentos-->
-                            <md-button aria-label="Detalhar" ui-sref="listarEstabelecimentos({idEstabelecimentos: estabelecimentos.idEstabelecimentos})" ui-sref-opts="{reload: true}">
-                                <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
-                                <md-tooltip md-direction="bottom"> 
+
+                              <md-button aria-label="Detalhar ESTABELECIMENTOS"
+                                ui-sref="pesquisarEstabelecimentosPorCodigoDaUnidade(
+                                  {codCnes: estabelecimentosPorCodigoDaUnidade.codCnes})"
+                                ui-sref-opts="{reload: true}">
+                                  <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
+                                  <md-tooltip md-direction="bottom">
                                       Detalhar Estabelecimentos
-                                </md-tooltip>
-                            </md-button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </form>
-</main>
+                                  </md-tooltip>
+                              </md-button>
+                          </td>
+                          <td md-cell>
+
+                              <md-button aria-label="Exibir no Mapa"
+                                ui-sref="pesquisarEstabelecimentosPorCoordenadas(
+                                  {
+                                    latitude: estabelecimentos.lat,
+                                    longitude:estabelecimentos.long
+                                  })"
+                                ui-sref-opts="{reload: true}">
+                                  <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
+                                  <md-tooltip md-direction="bottom">
+                                      Exibir no Mapa
+                                  </md-tooltip>
+                              </md-button>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </form>
+  </main>

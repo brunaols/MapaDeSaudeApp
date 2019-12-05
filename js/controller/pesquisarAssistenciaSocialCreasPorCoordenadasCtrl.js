@@ -2,8 +2,8 @@ var pesquisarAssistenciaSocialCreasPorCoordenadasCtrl = function ($scope, $mdToa
 
     $scope.assistenciaSocialCreas = [];
 
-    $scope.pesquisarAssistenciaSocialCreasPorCoordenadas = function (latitude, longitude, raio) {
-        assistenciaSocialApi.getPesquisarAssistenciaSocialCreasPorCoordenadasCtrl(latitude, longitude, raio)
+    $scope.pesquisarAssistenciaSocialCreasPorCoordenadas = function (latitude, longitude) {
+        assistenciaSocialApi.getPesquisarAssistenciaSocialCreasPorCoordenadasCtrl(latitude, longitude)
             .then(function (response) {
             // Toast
                 var toast = $mdToast.simple()
